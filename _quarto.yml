@@ -6,11 +6,11 @@ execute:
   echo: true
 
 book:
-  title: "YOUR PROJECT TITLE"
+  title: "Coral Bleaching"
   author:
-    - AUTHOR1 (UNI1)
-    - AUTHOR2 (UNI2)
-  repo-url: https://github.com/YOUR_GITHUB_ACCOUNT/REPO_NAME
+    - Noor Wahle (NEW2133)
+    - Caterina Almazan (CGA2133)
+  repo-url: https://github.com/wahlen21/coral_bleaching
   date: today
   page-footer:
     right: |
