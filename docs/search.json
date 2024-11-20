@@ -2,22 +2,31 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "YOUR PROJECT TITLE",
+    "title": "Coral Bleaching",
     "section": "",
-    "text": "1 Introduction"
+    "text": "1 Introduction\nCoral reefs are one of the most diverse types of ecosystems in the world. Coral is largely made up of individual animals called coral polyps, which are the organisms primarily responsible for building reefs. Thousands of species rely on corals and the reefs they form for survival: Due to the diversity of life found within the habitats created by corals, reefs are often referred to as the “rainforests of the sea.” About 25% of the ocean’s fish population depend on healthy coral reefs; fish and other organisms find shelter, food, as well as breed and raise their young among the many nooks and crannies formed by corals [1].\nCoral bleaching is a major phenomenon that has been detrimentally affecting coral reefs and sea life worldwide. When water temperatures increase – or more generally when corals are stressed by changes in conditions such as temperature, light, or nutrients – they will expel the beneficial symbiotic algae (zooxanthellae) living in their tissues, causing the coral to turn completely white. This event is called coral bleaching. Once a coral bleaches, it is not dead; corals can survive a bleaching event, however they are under much more stress and are subject to mortality [2]. On April 15, 2024, the National Oceanic and Atmospheric Administration (NOAA) confirmed the world has been experiencing a global coral bleaching event. Bleaching-level heat stress, as remotely monitored and predicted by NOAA Coral Reef Watch, has been extensive across the Atlantic, Pacific and Indian Ocean basins. As of August 20, 2024, 75.0% of coral reefs worldwide have been impacted by bleaching-level heat stress since January 1, 2023, the largest percentage of any global coral bleaching event in history to date [3].\nWe chose this topic due to the pressing stakes of this global environmental crisis. We aim to explore which parts of the world are experiencing the largest impacts of coral bleaching, and to what extent has damage been done? Is there any correlation between the subregions and longitude, latitude coordinates of coral bleaching reports and bleaching severity? In addressing these questions through visualization and data exploration, we hope our analysis lends itself to the greater discussion and importance of shedding light on the urgency of coral reef preservation for the greater health of oceanic ecosystems.\n[1] https://www.noaa.gov/education/resource-collections/marine-life/coral-reef-ecosystems [2] https://oceanservice.noaa.gov/facts/coral_bleach.html [3] https://coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
   },
   {
-    "objectID": "data.html#description",
-    "href": "data.html#description",
+    "objectID": "data.html",
+    "href": "data.html",
     "title": "2  Data",
-    "section": "2.1 Description",
-    "text": "2.1 Description"
+    "section": "",
+    "text": "2.1 Description",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data</span>"
+    ]
   },
   {
     "objectID": "data.html#missing-value-analysis",
     "href": "data.html#missing-value-analysis",
     "title": "2  Data",
     "section": "2.2 Missing value analysis",
-    "text": "2.2 Missing value analysis"
+    "text": "2.2 Missing value analysis\n\n\nCode\n#install.packages('naniar')\nlibrary(\"readxl\")\nlibrary('naniar')\nlibrary('ggplot2')\n\ndf &lt;- read_excel(\"data/CoralBleaching.xlsx\")\n\n\n\n\nCode\n# Visualization 1\nvis_miss(df) + labs(title = \"Missing Values per Variable\")\n\n\n\n\n\n\n\n\n\nThis graph allows us to understand the percentage of missing values existing in each column of the Coral Bleaching dataset. Columns with a low percentage (&lt;=5%) of missing values include: ID, REGION, SUBREGION, COUNTRY, LOCATION, LAT, LON, YEAR, SEVERITY_CODE, BLEACHING_SEVERITY, SOURCE, REFERENCE_CODE, and COUNTRY_CODE. Columns with a high percentage (&gt;5%) of missing values include: MONTH, DEPTH, CORAL_FAMILY, CORAL_SPECIES, PERCENTAGE_AFFECTED, BLEACHING_DURATION, MORTALITY_CODE, MORTALITY, RECOVERY_CODE, RECOVERY, SURVEY_TYPE, SURVEY_AREA, WATER_TEMPERATURE, OTHER_FACTORS, and REMARKS. The total percentage of missing data is 45.1%. While this proportion is relatively high, the dataset is still viable because the missing data primarily exists in columns that will not be used in our EDA.\n\n\nCode\n# Visualization 2\ngg_miss_fct(x = df, fct = BLEACHING_SEVERITY) + labs(title = \"Missing Values Faceted on Bleaching Severity\")\n\n\n\n\n\n\n\n\n\nThis graph depicts the percentage of missing values per column faceted on BLEACHING_SEVERITY. BLEACHING_SEVERITY is an important variable in understanding the level of coral bleaching recorded over time at different locations. We can use this visualization to understand if any of the outcomes of BLEACHING_SEVERITY contains a significant percentage of missing data.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data</span>"
+    ]
   }
 ]
