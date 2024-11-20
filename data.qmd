@@ -3,3 +3,25 @@
 ## Description
 
 ## Missing value analysis
+```{r}
+#install.packages('naniar')
+library("readxl")
+library('naniar')
+library('ggplot2')
+
+df <- read_excel("data/CoralBleaching.xlsx")
+```
+
+```{r}
+# Graph 1
+vis_miss(df) + labs(title = "Missing Values per Variable")
+```
+
+This graph allows us to understand the percentage of missing values existing in each column of the Coral Bleaching dataset. Columns with a low percentage (<=5%) of missing values include: ID, REGION, SUBREGION, COUNTRY, LOCATION, LAT, LON, YEAR, SEVERITY_CODE, BLEACHING_SEVERITY, SOURCE, REFERENCE_CODE, and COUNTRY_CODE. Columns with a high percentage (>5%) of missing values include: MONTH, DEPTH, CORAL_FAMILY, CORAL_SPECIES, PERCENTAGE_AFFECTED, BLEACHING_DURATION, MORTALITY_CODE, MORTALITY, RECOVERY_CODE, RECOVERY, SURVEY_TYPE, SURVEY_AREA, WATER_TEMPERATURE, OTHER_FACTORS, and REMARKS. 
+The total percentage of missing data is 45.1%. While this proportion is relatively high, the dataset is still viable because the missing data primarily exists in columns that will not be used in our EDA.
+
+```{r}
+# Graph 2
+gg_miss_fct(x = df, fct = BLEACHING_SEVERITY) + labs(title = "Missing Values Faceted on Bleaching Severity")
+```
+This graph depicts the percentage of missing values per column faceted on BLEACHING_SEVERITY. BLEACHING_SEVERITY is an important variable in understanding the level of coral bleaching recorded over time at different locations. We can use this visualization to understand if any of the outcomes of BLEACHING_SEVERITY contains a significant percentage of missing data.  
