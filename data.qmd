@@ -13,7 +13,7 @@ df <- read_excel("data/CoralBleaching.xlsx")
 ```
 
 ```{r}
-# Graph 1
+# Visualization 1
 vis_miss(df) + labs(title = "Missing Values per Variable")
 ```
 
@@ -21,7 +21,7 @@ This graph allows us to understand the percentage of missing values existing in 
 The total percentage of missing data is 45.1%. While this proportion is relatively high, the dataset is still viable because the missing data primarily exists in columns that will not be used in our EDA.
 
 ```{r}
-# Graph 2
+# Visualization 2
 gg_miss_fct(x = df, fct = BLEACHING_SEVERITY) + labs(title = "Missing Values Faceted on Bleaching Severity")
 ```
-This graph depicts the percentage of missing values per column faceted on BLEACHING_SEVERITY. BLEACHING_SEVERITY is an important variable in understanding the level of coral bleaching recorded over time at different locations. We can use this visualization to understand if any of the outcomes of BLEACHING_SEVERITY contains a significant percentage of missing data.  
+This graph depicts the percentage of missing values per column faceted on BLEACHING_SEVERITY. BLEACHING_SEVERITY is an important variable in understanding the level of coral bleaching recorded over time at different locations. We can use this visualization to understand if any of the outcomes of BLEACHING_SEVERITY contains a significant percentage of missing data. 
