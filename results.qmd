@@ -1,1 +1,55 @@
 # Results
+```{r}
+library(ggplot2)
+library(tidyverse);
+#install.packages('naniar')
+library("readxl")
+library('naniar')
+```
+
+## Load dataset
+```{r}
+df <- read_excel("data/CoralBleaching.xlsx")
+df <- df |> drop_na(REGION)
+```
+
+
+
+
+## Regional Distribution
+```{r}
+ggplot(data=df, aes(REGION)) +
+  geom_bar(fill="lightblue",color='black') +
+  labs(y = "Number of Observations", x = "Region", title = "Number of Observations by Region") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+# Bar plot: x=Country, y=number of observations
+
+
+```
+
+
+## Geospatial Trends
+```{r}
+# Heatmap: x=lat, y=long, color=bleaching_severity
+
+```
+
+```{r}
+# Heatmap: x=lat, y=long, color=bleaching_severity, facet=Region
+
+```
+
+```{r}
+# Hexbin: x=lat, y=long, color=bleaching_severity, facet=Region
+
+```
+
+
+## Temporal Trends
+```{r}
+
+```
+
