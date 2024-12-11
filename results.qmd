@@ -1,13 +1,14 @@
 # Results
 ```{r}
+#install.packages('naniar')
+#install.packages("viridis")
 library(ggplot2)
 library(tidyverse);
-#install.packages('naniar')
 library("readxl")
 library('naniar')
 library(dplyr)
-#install.packages("viridis")
 library(viridis)
+library(forcats)
 ```
 
 ## Load dataset
@@ -17,145 +18,41 @@ df <- df |> drop_na(REGION)
 ```
 
 
-
-
 ## Regional Distribution
 ```{r}
-ggplot(data=df, aes(REGION)) +
-  geom_bar(fill="lightblue",color='black') +
+ggplot(data = df, aes(x = fct_infreq(REGION))) +
+  geom_bar(fill = "lightblue", color = 'black') +
   labs(y = "Number of Observations", x = "Region", title = "Number of Observations by Region") +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5))
 ```
+```{r, fig.width=6, fig.height=8}
+country_counts <- df %>%
+  filter(BLEACHING_SEVERITY != "Severity Unknown") %>%
+  group_by(COUNTRY) %>%
+  summarize(num_observations = n()) %>%
+  arrange(desc(num_observations))
 
-```{r}
-# Bar plot: x=Country, y=number of observations
-# group_country_df <- df |> group_by(COUNTRY) |> summarize(country_count=n(), YEAR=YEAR)
-# 
-# ggplot(data=group_country_df, aes(x=YEAR,y=country_count, color=COUNTRY)) +
-#   geom_line() +
-#   labs(y = "Number of Observations", x = "Country", title = "Number of Observations by Country") +
-#   theme_minimal() +
-#   theme(plot.title = element_text(hjust = 0.5))
-
-group_country_df <- df |> 
-  group_by(COUNTRY, YEAR) |> 
-  summarize(country_count = n(), .groups = "drop")
-
-ggplot(data = group_country_df, aes(x = YEAR, y = country_count, fill = COUNTRY)) +
-  geom_path() +
+# Cleveland dot plot
+ggplot(country_counts, aes(x = num_observations, y = reorder(COUNTRY, num_observations))) +
+  geom_point(color = "lightblue", size = 1.5) +
+  geom_segment(aes(xend = 0, yend = COUNTRY), color = "darkgray", size = 0.5) + 
   labs(
-    y = "Number of Observations",
-    x = "Year",
-    title = "Number of Observations by Country"
+    title = "Number of Observations by Country",
+    x = "Number of Observations",
+    y = "Country"
   ) +
   theme_minimal() +
-  theme(plot.title = element_text(hjust = 0.5)) # Center title
-
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    axis.text = element_text(size = 6)
+  )
 
 ```
 
 
 ## Geospatial Trends
 
-
-```{r, fig.width=14, fig.height=10}
-library(ggplot2)
-library(dplyr)
-#install.packages('maps')
-library(maps)
-library(viridis)
-
-# Get the top 5 countries based on number of observations, excluding "Severity Unknown"
-top_5_countries <- df %>%
-  filter(BLEACHING_SEVERITY != "Severity Unknown") %>%
-  group_by(COUNTRY) %>%
-  summarize(num_observations = n()) %>%
-  arrange(desc(num_observations)) %>%
-  slice_head(n = 3)
-
-# Filter data for the top 5 countries
-top_5_countries_df <- df %>%
-  filter(COUNTRY %in% top_5_countries$COUNTRY & BLEACHING_SEVERITY != "Severity Unknown")
-
-# Get world map data
-world_map <- map_data("world")
-
-heatmap_map_plot <- ggplot() +
-  geom_map(data = world_map, map = world_map, aes(x = long, y = lat, map_id = region),
-           color = "black", fill = "lightgray", size = 0.2) +
-  geom_point(data = top_5_countries_df, aes(x = LON, y = LAT, color = BLEACHING_SEVERITY, fill = BLEACHING_SEVERITY),
-             shape = 21, size = 2, stroke = 0.5) +
-  labs(
-    title = "Bleaching Severity Heatmap by Country",
-    x = "Longitude",
-    y = "Latitude",
-    fill = "Bleaching Severity",
-    color = "Bleaching Severity"
-  ) +
-  theme_minimal() +
-  theme(
-    strip.text = element_text(size = 10),  # Adjust facet labels
-    axis.text = element_text(size = 8)  # Adjust axis text size
-  ) +
-  facet_wrap(~COUNTRY, scales='free')  # Facet by country without zooming
-
-# Display the plot
-print(heatmap_map_plot)
-
-```
-
-
-
-```{r, fig.width=12, fig.height=6}
-# Get the top 5 countries based on number of observations
-top_5_countries <- df %>%
-  filter(BLEACHING_SEVERITY != "Severity Unknown") |>
-  group_by(COUNTRY) %>%
-  summarize(num_observations = n()) %>%
-  arrange(desc(num_observations)) %>%
-  slice_head(n = 3)
-
-# Filter data for the top 5 countries
-top_5_countries_df <- df %>%
-  filter(COUNTRY %in% top_5_countries$COUNTRY) 
-
-
-severity_colors <- c(
-  "No Bleaching" = "coral1",
-  "Low" = "coral2",
-  "Medium" = "coral3",
-  "HIGH" = "coral4"
-)
-
-
-# Create the heatmap plot
-heatmap_plot <- ggplot(top_5_countries_df, aes(x = LON, y = LAT, color = BLEACHING_SEVERITY)) + 
-  geom_point(aes(fill = BLEACHING_SEVERITY), # Filling the points with the severity color
-             shape = 21,                     # Use filled circles (can change shape as needed)
-             size = 2,                       # Adjust the size of the points
-             stroke = .5,                   # Adjust the stroke (edge) thickness
-             color = "black",
-             alpha = 0.8) +  # Create the heatmap
-  facet_wrap(~COUNTRY, scales = "free") +  # Facet by country
-  labs(
-    title = "Bleaching Severity Heatmap by Country",
-    x = "Longitude",
-    y = "Latitude",
-    fill = "Bleaching Severity"
-  ) +
-  theme_minimal() +  # Minimal theme for cleaner appearance
-  theme(
-    strip.text = element_text(size = 10),  # Adjust facet labels
-    axis.text = element_text(size = 8)  # Adjust axis text size
-  )+
-  scale_fill_manual(values = severity_colors)
-
-heatmap_plot
-
-
-
-```
 
 ```{r}
 # Heatmap: x=lat, y=long, color=bleaching_severity
@@ -196,8 +93,8 @@ top_5_countries_df <- df %>%
   filter(COUNTRY %in% top_5_countries$COUNTRY & BLEACHING_SEVERITY != "Severity Unknown")
 
 # Hexbin plot
-ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + 
-  geom_hex(bins = 30, alpha = 0.8, color='black',size=.3) + 
+ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = factor(BLEACHING_SEVERITY, levels = c("No Bleaching", "Low", "Medium", "HIGH")))) + 
+  geom_hex(alpha = 0.8, color = 'black', size = .3) + 
   facet_wrap(~COUNTRY, scales = "free") + 
   labs(
     title = "Hexbin Plot of Bleaching Severity by Country",
@@ -207,24 +104,23 @@ ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) +
   ) +
   theme_minimal() +
   scale_fill_manual(values = c(
-  "No Bleaching" = "coral1",
-  "Low" = "coral2",
-  "Medium" = "coral3",
-  "HIGH" = "coral4"
-)) +
+    "No Bleaching" = "coral1",
+    "Low" = "coral2",
+    "Medium" = "coral3",
+    "HIGH" = "coral4"
+  )) +
   theme(
     strip.text = element_text(size = 10), 
     axis.text = element_text(size = 8)
   )
 
+
 ```
 
-```{r, fig.width=10, fig.height=8}
-x_low <- 142
-
+```{r, fig.width=12, fig.height=8}
 top_5_countries <- df %>%
   filter(BLEACHING_SEVERITY != "Severity Unknown") %>% 
-  filter(LON > x_low) %>%
+  filter(LON > 142) %>%
   group_by(COUNTRY) %>%
   summarize(num_observations = n()) %>%
   arrange(desc(num_observations)) %>%
@@ -240,8 +136,11 @@ top_5_countries_df <- df %>%
   )
 
 # Heatmap plot
-ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + 
-  geom_tile(color='black') + 
+ggplot() +
+  # Add the world map (background)
+  geom_map(data = world_map, map = world_map, aes(x = long, y = lat, map_id = region), 
+           color = "black", fill = "lightgray", size = 0.2) +
+  geom_tile(data = top_5_countries_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + 
   facet_wrap(~COUNTRY, scales = "free") + 
   labs(
     title = "Heatmap Plot of Bleaching Severity",
@@ -260,7 +159,8 @@ ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) +
     strip.text = element_text(size = 10), 
     axis.text = element_text(size = 8)
   ) +
-  xlim(x_low, NA)
+  xlim(142, 153) +
+  ylim(-25, -8)
 ```
 
 
