@@ -170,19 +170,19 @@ top_5_countries <- df %>%
 top_5_countries_df <- df %>%
   filter(COUNTRY %in% top_5_countries$COUNTRY) 
 
-ggplot(df, aes(x = LAT, y = LON, fill = BLEACHING_SEVERITY)) + 
+ggplot(df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + 
   geom_density_2d() + 
   facet_wrap(~REGION, scales = "free") +  # Allow each facet to have its own scales
   labs(
     title = "Density of Bleaching Severity by Region",
-    x = "Latitude",
-    y = "Longitude",
+    x = "Longitude",
+    y = "Latitude",
     fill = "Bleaching Severity"
   ) +
   theme_minimal()
 
 ```
-```{r, fig.width=12, fig.height=6}
+```{r, fig.width=10, fig.height=4}
 # Get the top 5 countries based on number of observations
 top_5_countries <- df %>%
   filter(BLEACHING_SEVERITY != "Severity Unknown") %>%
@@ -196,27 +196,71 @@ top_5_countries_df <- df %>%
   filter(COUNTRY %in% top_5_countries$COUNTRY & BLEACHING_SEVERITY != "Severity Unknown")
 
 # Hexbin plot
-ggplot(top_5_countries_df, aes(x = LAT, y = LON, fill = BLEACHING_SEVERITY)) + 
-  geom_hex(bins = 30, alpha = 0.9, color='black') +  # Set number of bins and adjust transparency
-  facet_wrap(~COUNTRY, scales = "free") +  # Allow each facet to have its own scales
+ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + 
+  geom_hex(bins = 30, alpha = 0.8, color='black',size=.3) + 
+  facet_wrap(~COUNTRY, scales = "free") + 
   labs(
     title = "Hexbin Plot of Bleaching Severity by Country",
-    x = "Latitude",
-    y = "Longitude",
+    x = "Longitude",
+    y = "Latitude",
     fill = "Bleaching Severity"
   ) +
-  theme_minimal() +  # Minimal theme for cleaner appearance
+  theme_minimal() +
   scale_fill_manual(values = c(
   "No Bleaching" = "coral1",
   "Low" = "coral2",
   "Medium" = "coral3",
   "HIGH" = "coral4"
-)) +  # Custom colors
+)) +
   theme(
-    strip.text = element_text(size = 10),  # Adjust facet labels
-    axis.text = element_text(size = 8)  # Adjust axis text size
+    strip.text = element_text(size = 10), 
+    axis.text = element_text(size = 8)
   )
 
+```
+
+```{r, fig.width=10, fig.height=8}
+x_low <- 142
+
+top_5_countries <- df %>%
+  filter(BLEACHING_SEVERITY != "Severity Unknown") %>% 
+  filter(LON > x_low) %>%
+  group_by(COUNTRY) %>%
+  summarize(num_observations = n()) %>%
+  arrange(desc(num_observations)) %>%
+  slice_head(n = 1)
+
+# Filter data for the top 5 countries
+top_5_countries_df <- df %>%
+  filter(COUNTRY %in% top_5_countries$COUNTRY & BLEACHING_SEVERITY != "Severity Unknown") %>%
+  mutate(
+    LAT = round(LAT, 1),  # Round LAT to the nearest tenth
+    LON = round(LON, 1),  # Round LON to the nearest tenth
+    BLEACHING_SEVERITY = factor(BLEACHING_SEVERITY, levels = c("No Bleaching", "Low", "Medium", "HIGH"))
+  )
+
+# Heatmap plot
+ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + 
+  geom_tile(color='black') + 
+  facet_wrap(~COUNTRY, scales = "free") + 
+  labs(
+    title = "Heatmap Plot of Bleaching Severity",
+    x = "Longitude",
+    y = "Latitude",
+    fill = "Bleaching Severity"
+  ) +
+  theme_minimal() +
+  scale_fill_manual(values = c(
+  "No Bleaching" = "coral1",
+  "Low" = "coral2",
+  "Medium" = "coral3",
+  "HIGH" = "coral4"
+)) +
+  theme(
+    strip.text = element_text(size = 10), 
+    axis.text = element_text(size = 8)
+  ) +
+  xlim(x_low, NA)
 ```
 
 
