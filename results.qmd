@@ -47,38 +47,10 @@ ggplot(country_counts, aes(x = num_observations, y = reorder(COUNTRY, num_observ
     plot.title = element_text(hjust = 0.5),
     axis.text = element_text(size = 6)
   )
-
 ```
 
 
 ## Geospatial Trends
-
-
-```{r}
-# Heatmap: x=lat, y=long, color=bleaching_severity
-top_5_countries <- df %>%
-  filter(BLEACHING_SEVERITY != "Severity Unknown") |>
-  group_by(COUNTRY) %>%
-  summarize(num_observations = n()) %>%
-  arrange(desc(num_observations)) %>%
-  slice_head(n = 3)
-
-# Filter data for the top 5 countries
-top_5_countries_df <- df %>%
-  filter(COUNTRY %in% top_5_countries$COUNTRY) 
-
-ggplot(df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + 
-  geom_density_2d() + 
-  facet_wrap(~REGION, scales = "free") +  # Allow each facet to have its own scales
-  labs(
-    title = "Density of Bleaching Severity by Region",
-    x = "Longitude",
-    y = "Latitude",
-    fill = "Bleaching Severity"
-  ) +
-  theme_minimal()
-
-```
 ```{r, fig.width=10, fig.height=4}
 # Get the top 5 countries based on number of observations
 top_5_countries <- df %>%
@@ -113,8 +85,6 @@ ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = factor(BLEACHING_SEVERIT
     strip.text = element_text(size = 10), 
     axis.text = element_text(size = 8)
   )
-
-
 ```
 
 ```{r, fig.width=12, fig.height=8}
@@ -134,7 +104,7 @@ top_5_countries_df <- df %>%
     LON = round(LON, 1),  # Round LON to the nearest tenth
     BLEACHING_SEVERITY = factor(BLEACHING_SEVERITY, levels = c("No Bleaching", "Low", "Medium", "HIGH"))
   )
-
+world_map <- map_data("world")
 # Heatmap plot
 ggplot() +
   # Add the world map (background)
@@ -164,25 +134,10 @@ ggplot() +
 ```
 
 
-```{r}
-# Heatmap: x=lat, y=long, color=bleaching_severity, facet=Region
-
-
-
-
-```
-
-```{r}
-# Hexbin: x=lat, y=long, color=bleaching_severity, facet=Region
-
-
-
-
-```
-
 
 ## Temporal Trends
-```{r}
 
-```
+
+
+
 
