@@ -1,14 +1,14 @@
 # Results
 ```{r}
-#install.packages('naniar')
-#install.packages("viridis")
-library(ggplot2)
+#install.packages('naniar');
+#install.packages("viridis");
+library(ggplot2);
 library(tidyverse);
-library("readxl")
-library('naniar')
-library(dplyr)
-library(viridis)
-library(forcats)
+library("readxl");
+library('naniar');
+library(dplyr);
+library(viridis);
+library(forcats);
 ```
 
 ## Load dataset

@@ -1,0 +1,1697 @@
+[
+  {
+    "COUNTRY": "American Samoa",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "American Samoa",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 29
+  },
+  {
+    "COUNTRY": "American Samoa",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 6
+  },
+  {
+    "COUNTRY": "American Samoa",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 4
+  },
+  {
+    "COUNTRY": "American Samoa",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Aruba",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Aruba",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Australia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 16
+  },
+  {
+    "COUNTRY": "Australia",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 37
+  },
+  {
+    "COUNTRY": "Australia",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 12
+  },
+  {
+    "COUNTRY": "Australia",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 46
+  },
+  {
+    "COUNTRY": "Australia",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 24
+  },
+  {
+    "COUNTRY": "Australia (North)",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Australia (West)",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Bahamas",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 13
+  },
+  {
+    "COUNTRY": "Bahamas",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 67
+  },
+  {
+    "COUNTRY": "Bahamas",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 12
+  },
+  {
+    "COUNTRY": "Bahamas",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Bahamas",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 15
+  },
+  {
+    "COUNTRY": "Bahrain",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 18
+  },
+  {
+    "COUNTRY": "Bahrain",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Bahrain",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Bahrain",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Baker and Howland Islands",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Barbados",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Barbados",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Belize",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 27
+  },
+  {
+    "COUNTRY": "Belize",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 34
+  },
+  {
+    "COUNTRY": "Belize",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 19
+  },
+  {
+    "COUNTRY": "Belize",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 6
+  },
+  {
+    "COUNTRY": "Belize",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 29
+  },
+  {
+    "COUNTRY": "Bermuda",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Bermuda",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 6
+  },
+  {
+    "COUNTRY": "Bermuda",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Bermuda",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Bermuda",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Borneo",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Brazil",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Brazil",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Cambodia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 9
+  },
+  {
+    "COUNTRY": "Cambodia",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Cayman Islands",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Cayman Islands",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 27
+  },
+  {
+    "COUNTRY": "Cayman Islands",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Cayman Islands",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Cayman Islands",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 18
+  },
+  {
+    "COUNTRY": "Chagos Archipelago (UK)",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Chagos Archipelago (UK)",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Chile",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Chile",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Colombia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Colombia",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 17
+  },
+  {
+    "COUNTRY": "Colombia",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 11
+  },
+  {
+    "COUNTRY": "Colombia",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 6
+  },
+  {
+    "COUNTRY": "Colombia",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 14
+  },
+  {
+    "COUNTRY": "Comoros",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Comoros",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Comoros",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Cook Islands",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Cook Islands",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Cook Islands",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Cook Islands",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Costa Rica",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 12
+  },
+  {
+    "COUNTRY": "Costa Rica",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Costa Rica",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Costa Rica",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 9
+  },
+  {
+    "COUNTRY": "Cuba",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Cuba",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 60
+  },
+  {
+    "COUNTRY": "Cuba",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Cuba",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Cuba",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 114
+  },
+  {
+    "COUNTRY": "Dominica",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Dominican Republic",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 18
+  },
+  {
+    "COUNTRY": "Dominican Republic",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 12
+  },
+  {
+    "COUNTRY": "Dominican Republic",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 24
+  },
+  {
+    "COUNTRY": "Ecuador",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 22
+  },
+  {
+    "COUNTRY": "Ecuador",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Ecuador",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Ecuador",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Egypt",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 41
+  },
+  {
+    "COUNTRY": "Eritrea",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Eritrea",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Eritrea",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Federated States of Micronesia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Federated States of Micronesia",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Federated States of Micronesia",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Fiji",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 29
+  },
+  {
+    "COUNTRY": "Fiji",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 25
+  },
+  {
+    "COUNTRY": "Fiji",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 17
+  },
+  {
+    "COUNTRY": "Fiji",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 15
+  },
+  {
+    "COUNTRY": "Fiji",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 324
+  },
+  {
+    "COUNTRY": "Florida (USA)",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 15
+  },
+  {
+    "COUNTRY": "Florida (USA)",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 62
+  },
+  {
+    "COUNTRY": "Florida (USA)",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 26
+  },
+  {
+    "COUNTRY": "Florida (USA)",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 15
+  },
+  {
+    "COUNTRY": "Florida (USA)",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 31
+  },
+  {
+    "COUNTRY": "France",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 3
+  },
+  {
+    "COUNTRY": "France",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "French Polynesia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 37
+  },
+  {
+    "COUNTRY": "French Polynesia",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 11
+  },
+  {
+    "COUNTRY": "French Polynesia",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 16
+  },
+  {
+    "COUNTRY": "French Polynesia",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 37
+  },
+  {
+    "COUNTRY": "French Polynesia",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 11
+  },
+  {
+    "COUNTRY": "Grenada",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Guadeloupe",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Guadeloupe",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Guadeloupe",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Guam",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Guam",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Guam",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Haiti",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Hawaiian Islands (USA)",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 9
+  },
+  {
+    "COUNTRY": "Hawaiian Islands (USA)",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Hawaiian Islands (USA)",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Hawaiian Islands (USA)",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Honduras",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Honduras",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Honduras",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "India",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 13
+  },
+  {
+    "COUNTRY": "India",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "India",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 8
+  },
+  {
+    "COUNTRY": "India",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 52
+  },
+  {
+    "COUNTRY": "Indonesia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 15
+  },
+  {
+    "COUNTRY": "Indonesia",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Indonesia",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Indonesia",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 19
+  },
+  {
+    "COUNTRY": "Indonesia",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Iran",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Iran",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Israel",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Israel",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Jamaica",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Jamaica",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 38
+  },
+  {
+    "COUNTRY": "Jamaica",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Jamaica",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Jamaica",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 30
+  },
+  {
+    "COUNTRY": "Japan",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 20
+  },
+  {
+    "COUNTRY": "Japan",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Japan",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 13
+  },
+  {
+    "COUNTRY": "Japan",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 14
+  },
+  {
+    "COUNTRY": "Japan",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 9
+  },
+  {
+    "COUNTRY": "Kenya",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 9
+  },
+  {
+    "COUNTRY": "Kenya",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Kenya",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Kenya",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Kiribati",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Kuwait",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Kuwait",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Kuwait",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Macau",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Madagascar",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Madagascar",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 9
+  },
+  {
+    "COUNTRY": "Madagascar",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Madagascar",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Madagascar",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Malaysia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 15
+  },
+  {
+    "COUNTRY": "Malaysia",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 26
+  },
+  {
+    "COUNTRY": "Malaysia",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 11
+  },
+  {
+    "COUNTRY": "Malaysia",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 92
+  },
+  {
+    "COUNTRY": "Malaysia",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 25
+  },
+  {
+    "COUNTRY": "Maldives",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 27
+  },
+  {
+    "COUNTRY": "Maldives",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Maldives",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Maldives",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Maldives",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Marshall Islands",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Marshall Islands",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Marshall Islands",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Martinique",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Mauritania",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Mauritius",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Mauritius",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Mauritius",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Mauritius",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Mayotte",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Mayotte",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Mexico",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 111
+  },
+  {
+    "COUNTRY": "Mexico",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 343
+  },
+  {
+    "COUNTRY": "Mexico",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 294
+  },
+  {
+    "COUNTRY": "Mexico",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 120
+  },
+  {
+    "COUNTRY": "Mexico",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Mexico (Caribbean)",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Mexico (Pacific)",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Minor Outlying Islands",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Minor Outlying Islands",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Mozambique",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 9
+  },
+  {
+    "COUNTRY": "Mozambique",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 6
+  },
+  {
+    "COUNTRY": "Mozambique",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Mozambique",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Mozambique",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Netherlands Antilles",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Netherlands Antilles",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 25
+  },
+  {
+    "COUNTRY": "Netherlands Antilles",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Netherlands Antilles",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Netherlands Antilles",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "New Caledonia",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "New Caledonia",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 18
+  },
+  {
+    "COUNTRY": "New Caledonia",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "New Zealand",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Nicaragua",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Nicaragua",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 6
+  },
+  {
+    "COUNTRY": "Northern Mariana Islands",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Northern Mariana Islands",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Northern Mariana Islands",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Northern Mariana Islands",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Northern Mariana Islands",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Oman",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Oman",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Oman",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Oman",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Oman",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Palau",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 24
+  },
+  {
+    "COUNTRY": "Palau",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Palau",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Palau",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Palmyra Atoll",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Panama",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 20
+  },
+  {
+    "COUNTRY": "Panama",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 48
+  },
+  {
+    "COUNTRY": "Panama",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Panama",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Panama",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 26
+  },
+  {
+    "COUNTRY": "Panama (Atlantic)",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Papua New Guinea",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Papua New Guinea",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 9
+  },
+  {
+    "COUNTRY": "Papua New Guinea",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Papua New Guinea",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Papua New Guinea",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 42
+  },
+  {
+    "COUNTRY": "Peninsular",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Peninsular",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Philippines",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 31
+  },
+  {
+    "COUNTRY": "Philippines",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 10
+  },
+  {
+    "COUNTRY": "Philippines",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 31
+  },
+  {
+    "COUNTRY": "Philippines",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 21
+  },
+  {
+    "COUNTRY": "Philippines",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 11
+  },
+  {
+    "COUNTRY": "Puerto Rico",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Puerto Rico",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 22
+  },
+  {
+    "COUNTRY": "Puerto Rico",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Puerto Rico",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Puerto Rico",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 21
+  },
+  {
+    "COUNTRY": "Qatar",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Réunion",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Réunion",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Réunion",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Réunion",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Réunion",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Samoa",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Samoa",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Samoa",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Saudi Arabia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Saudi Arabia",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Saudi Arabia",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Seychelles",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 13
+  },
+  {
+    "COUNTRY": "Seychelles",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Seychelles",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 11
+  },
+  {
+    "COUNTRY": "Seychelles",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Singapore",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Solomon Islands",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Solomon Islands",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Solomon Islands",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Solomon Islands",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 15
+  },
+  {
+    "COUNTRY": "Solomon Islands",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 80
+  },
+  {
+    "COUNTRY": "Somalia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Somalia",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Somalia",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "South Africa",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 12
+  },
+  {
+    "COUNTRY": "South Africa",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "South Africa",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Sri Lanka",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 13
+  },
+  {
+    "COUNTRY": "Sri Lanka",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Sri Lanka",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Sri Lanka",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Sri Lanka",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "St. Croix",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "St. Croix",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "St. Helena",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "St. Johnson & Thomas",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 4
+  },
+  {
+    "COUNTRY": "St. Kitts and Nevis",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "St. Lucia",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "St. Lucia",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 1
+  },
+  {
+    "COUNTRY": "St. Vincent and the Grenadines",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Sulawesi",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Taiwan",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Taiwan",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Taiwan",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Tanzania",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 13
+  },
+  {
+    "COUNTRY": "Tanzania",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Tanzania",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 18
+  },
+  {
+    "COUNTRY": "Tanzania",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Tanzania",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Thailand",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 16
+  },
+  {
+    "COUNTRY": "Thailand",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Thailand",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 13
+  },
+  {
+    "COUNTRY": "Thailand",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Thailand",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 12
+  },
+  {
+    "COUNTRY": "Timor-Leste",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 10
+  },
+  {
+    "COUNTRY": "Tonga",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Tonga",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Torres Strait & Great Barrier Reef",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 485
+  },
+  {
+    "COUNTRY": "Torres Strait & Great Barrier Reef",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 337
+  },
+  {
+    "COUNTRY": "Torres Strait & Great Barrier Reef",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 229
+  },
+  {
+    "COUNTRY": "Torres Strait & Great Barrier Reef",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 898
+  },
+  {
+    "COUNTRY": "Torres Strait & Great Barrier Reef",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 73
+  },
+  {
+    "COUNTRY": "Trinidad and Tobago",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Trinidad and Tobago",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Trinidad and Tobago",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Turks and Caicos Islands",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Turks and Caicos Islands",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 25
+  },
+  {
+    "COUNTRY": "Tuvalu",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "United Arab Emirates",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 6
+  },
+  {
+    "COUNTRY": "United Arab Emirates",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "United Arab Emirates",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "United Kingdom",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 7
+  },
+  {
+    "COUNTRY": "United States",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 1
+  },
+  {
+    "COUNTRY": "United States",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 6
+  },
+  {
+    "COUNTRY": "United States",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "United States",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 3
+  },
+  {
+    "COUNTRY": "United States",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Vanuatu",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Vanuatu",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 64
+  },
+  {
+    "COUNTRY": "Venezuela",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 16
+  },
+  {
+    "COUNTRY": "Venezuela",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Venezuela",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Vietnam",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 5
+  },
+  {
+    "COUNTRY": "Vietnam",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 8
+  },
+  {
+    "COUNTRY": "Vietnam",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Virgin Islands (British)",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 4
+  },
+  {
+    "COUNTRY": "Virgin Islands (British)",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Virgin Islands (British)",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Virgin Islands (British)",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Virgin Islands (British)",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Virgin Islands (U.S.)",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 7
+  },
+  {
+    "COUNTRY": "Virgin Islands (U.S.)",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 3
+  },
+  {
+    "COUNTRY": "Virgin Islands (U.S.)",
+    "BLEACHING_SEVERITY": "Medium",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Virgin Islands (U.S.)",
+    "BLEACHING_SEVERITY": "Severity Unknown",
+    "count": 6
+  },
+  {
+    "COUNTRY": "Yemen",
+    "BLEACHING_SEVERITY": "HIGH",
+    "count": 2
+  },
+  {
+    "COUNTRY": "Yemen",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Yemen",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Yemen (Gulf of Aden)",
+    "BLEACHING_SEVERITY": "No Bleaching",
+    "count": 1
+  },
+  {
+    "COUNTRY": "Zanzibar Islands",
+    "BLEACHING_SEVERITY": "Low",
+    "count": 4
+  }
+]

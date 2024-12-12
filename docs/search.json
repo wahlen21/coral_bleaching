@@ -28,5 +28,75 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data</span>"
     ]
+  },
+  {
+    "objectID": "d3graph.html",
+    "href": "d3graph.html",
+    "title": "4  Interactive graph",
+    "section": "",
+    "text": "4.1 Global Coral Bleaching Severity Map",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Interactive graph</span>"
+    ]
+  },
+  {
+    "objectID": "results.html",
+    "href": "results.html",
+    "title": "3  Results",
+    "section": "",
+    "text": "3.1 Load dataset\nCode\ndf &lt;- read_excel(\"data/CoralBleaching.xlsx\")\ndf &lt;- df |&gt; drop_na(REGION)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "results.html#regional-distribution",
+    "href": "results.html#regional-distribution",
+    "title": "3  Results",
+    "section": "3.2 Regional Distribution",
+    "text": "3.2 Regional Distribution\n\n\nCode\nggplot(data = df, aes(x = fct_infreq(REGION))) +\n  geom_bar(fill = \"lightblue\", color = 'black') +\n  labs(y = \"Number of Observations\", x = \"Region\", title = \"Number of Observations by Region\") +\n  theme_minimal() +\n  theme(plot.title = element_text(hjust = 0.5))\n\n\n\n\n\n\n\n\n\n\n\nCode\ncountry_counts &lt;- df %&gt;%\n  filter(BLEACHING_SEVERITY != \"Severity Unknown\") %&gt;%\n  group_by(COUNTRY) %&gt;%\n  summarize(num_observations = n()) %&gt;%\n  arrange(desc(num_observations))\n\n# Cleveland dot plot\nggplot(country_counts, aes(x = num_observations, y = reorder(COUNTRY, num_observations))) +\n  geom_point(color = \"lightblue\", size = 1.5) +\n  geom_segment(aes(xend = 0, yend = COUNTRY), color = \"darkgray\", size = 0.5) + \n  labs(\n    title = \"Number of Observations by Country\",\n    x = \"Number of Observations\",\n    y = \"Country\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(hjust = 0.5),\n    axis.text = element_text(size = 6)\n  )\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "results.html#geospatial-trends",
+    "href": "results.html#geospatial-trends",
+    "title": "3  Results",
+    "section": "3.3 Geospatial Trends",
+    "text": "3.3 Geospatial Trends\n\n\nCode\n# Get the top 5 countries based on number of observations\ntop_5_countries &lt;- df %&gt;%\n  filter(BLEACHING_SEVERITY != \"Severity Unknown\") %&gt;%\n  group_by(COUNTRY) %&gt;%\n  summarize(num_observations = n()) %&gt;%\n  arrange(desc(num_observations)) %&gt;%\n  slice_head(n = 3)\n\n# Filter data for the top 5 countries\ntop_5_countries_df &lt;- df %&gt;%\n  filter(COUNTRY %in% top_5_countries$COUNTRY & BLEACHING_SEVERITY != \"Severity Unknown\")\n\n# Hexbin plot\nggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = factor(BLEACHING_SEVERITY, levels = c(\"No Bleaching\", \"Low\", \"Medium\", \"HIGH\")))) + \n  geom_hex(alpha = 0.8, color = 'black', size = .3) + \n  facet_wrap(~COUNTRY, scales = \"free\") + \n  labs(\n    title = \"Hexbin Plot of Bleaching Severity by Country\",\n    x = \"Longitude\",\n    y = \"Latitude\",\n    fill = \"Bleaching Severity\"\n  ) +\n  theme_minimal() +\n  scale_fill_manual(values = c(\n    \"No Bleaching\" = \"coral1\",\n    \"Low\" = \"coral2\",\n    \"Medium\" = \"coral3\",\n    \"HIGH\" = \"coral4\"\n  )) +\n  theme(\n    strip.text = element_text(size = 10), \n    axis.text = element_text(size = 8)\n  )\n\n\n\n\n\n\n\n\n\n\n\nCode\ntop_5_countries &lt;- df %&gt;%\n  filter(BLEACHING_SEVERITY != \"Severity Unknown\") %&gt;% \n  filter(LON &gt; 142) %&gt;%\n  group_by(COUNTRY) %&gt;%\n  summarize(num_observations = n()) %&gt;%\n  arrange(desc(num_observations)) %&gt;%\n  slice_head(n = 1)\n\n# Filter data for the top 5 countries\ntop_5_countries_df &lt;- df %&gt;%\n  filter(COUNTRY %in% top_5_countries$COUNTRY & BLEACHING_SEVERITY != \"Severity Unknown\") %&gt;%\n  mutate(\n    LAT = round(LAT, 1),  # Round LAT to the nearest tenth\n    LON = round(LON, 1),  # Round LON to the nearest tenth\n    BLEACHING_SEVERITY = factor(BLEACHING_SEVERITY, levels = c(\"No Bleaching\", \"Low\", \"Medium\", \"HIGH\"))\n  )\nworld_map &lt;- map_data(\"world\")\n# Heatmap plot\nggplot() +\n  # Add the world map (background)\n  geom_map(data = world_map, map = world_map, aes(x = long, y = lat, map_id = region), \n           color = \"black\", fill = \"lightgray\", size = 0.2) +\n  geom_tile(data = top_5_countries_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + \n  facet_wrap(~COUNTRY, scales = \"free\") + \n  labs(\n    title = \"Heatmap Plot of Bleaching Severity\",\n    x = \"Longitude\",\n    y = \"Latitude\",\n    fill = \"Bleaching Severity\"\n  ) +\n  theme_minimal() +\n  scale_fill_manual(values = c(\n  \"No Bleaching\" = \"coral1\",\n  \"Low\" = \"coral2\",\n  \"Medium\" = \"coral3\",\n  \"HIGH\" = \"coral4\"\n)) +\n  theme(\n    strip.text = element_text(size = 10), \n    axis.text = element_text(size = 8)\n  ) +\n  xlim(142, 153) +\n  ylim(-25, -8)\n\n\nWarning in geom_map(data = world_map, map = world_map, aes(x = long, y = lat, :\nIgnoring unknown aesthetics: x and y\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_tile()`).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "results.html#temporal-trends",
+    "href": "results.html#temporal-trends",
+    "title": "3  Results",
+    "section": "3.4 Temporal Trends",
+    "text": "3.4 Temporal Trends",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "d3graph.html#global-coral-bleaching-severity-map",
+    "href": "d3graph.html#global-coral-bleaching-severity-map",
+    "title": "4  Interactive graph",
+    "section": "",
+    "text": "Heatmap Transparency:\n    \n    1.00",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Interactive graph</span>"
+    ]
+  },
+  {
+    "objectID": "d3graph.html#usage",
+    "href": "d3graph.html#usage",
+    "title": "4  Interactive graph",
+    "section": "4.2 Usage",
+    "text": "4.2 Usage\nThis interactive heatmap visualizes coral bleaching severity across various locations, using a color-coded system to represent different levels of bleaching. The map overlays geospatial data points based on latitude and longitude, with each point’s color indicating the severity of bleaching. Bleaching severity ranges across “No Bleaching”, “Low”, “Medium”, and “High”. Users can hover over or click on data points to view additional information if available for the observation, such as the location, collection date, coral species, depth, and environmental conditions. This interactive heatmap provides a more detailed and informative experience than a static 2D map by allowing users to access specific data points directly. This tool allows users to analyze patterns in coral bleaching and related factors, enhancing their understanding of coral health across diverse regions.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Interactive graph</span>"
+    ]
   }
 ]
