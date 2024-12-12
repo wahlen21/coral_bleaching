@@ -16,7 +16,7 @@ df <- df |> drop_na(REGION)
 ```
 
 
-## Regional Distribution
+## Regional Distributions
 ```{r}
 ggplot(data = df, aes(x = fct_infreq(REGION))) +
   geom_bar(fill = "lightblue", color = 'black') +
