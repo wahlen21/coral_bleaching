@@ -42,3 +42,6 @@ let coralData = `r {{ json_data }}`;
 ## Usage
 This interactive heatmap visualizes coral bleaching severity across various locations, using a color-coded system to represent different levels of bleaching. The map overlays geospatial data points based on latitude and longitude, with each point's color indicating the severity of bleaching. Bleaching severity ranges across "No Bleaching", "Low", "Medium", and "High". Users can hover over or click on data points to view additional information if available for the observation, such as the location, collection date, coral species, depth, and environmental conditions. This interactive heatmap provides a more detailed and informative experience than a static 2D map by allowing users to access specific data points directly. This tool allows users to analyze patterns in coral bleaching and related factors, enhancing their understanding of coral health across diverse regions.
 
+
+
+
