@@ -27,6 +27,7 @@ ggplot(data = df, aes(x = fct_infreq(REGION))) +
     axis.text = element_text(size = 6)
   )
 ```
+This bar chart demonstrates the total number of coral bleaching observations, all of various bleaching degrees, across six regions. Australia and the Americas have the highest number of observations, both over 2000, due to the presence of extensive coral reef systems (e.g., the Great Barrier Reef) and stronger monitoring efforts. The Pacific and Asia follow with moderate observation counts, reflecting their significant reef areas but potentially less monitoring capacity compared to Australia and the Americas. Africa and the Middle East have the fewest observations, possibly due to smaller reef systems and limited monitoring resources.
 
 ```{r, fig.width=6, fig.height=8}
 country_counts <- df |>
@@ -50,7 +51,8 @@ ggplot(country_counts, aes(x = num_observations, y = reorder(COUNTRY, num_observ
     axis.text = element_text(size = 6)
   )
 ```
-
+This Cleveland dot plot displays the total number of observations for each country. Australia, particularly the Torres Strait & Great Barrier Reef region, dominates the data with the highest number of observations, reflecting its extensive reef system and well-funded research initiatives. Other countries, such as Mexico, Malaysia, and the United States (specifically Florida), also show high observation counts, likely due to their substantial reef coverage and strong conservation efforts.
+In contrast, many countries have significantly fewer observations, possibly indicating limited monitoring resources or smaller reef areas. The steep drop-off in observation counts after the top few countries highlights a variable global distribution of monitoring efforts.
 
 ```{r}
 df$BLEACHING_SEVERITY <- factor(df$BLEACHING_SEVERITY)
@@ -66,7 +68,13 @@ ggplot(df, aes(x = REGION, y = as.numeric(BLEACHING_SEVERITY), fill = REGION)) +
     axis.text = element_text(size = 6)
   )
 ```
+This violin plot demonstrates the distribution of bleaching severity across different regions, with the width of the violins representing the density of observations for each severity level. Bleaching severity ranges from lower values to higher values, providing insights into the most commonly observed severity levels within each region:
 
+1. Americas & Australia: These regions exhibit a wide range of bleaching severity and diversity across every level. The Americas has more emphasis on lower levels (level 2) while Australia has higher severity levels (level 4). 
+2. Africa & Middle East: Africa shows a concentration of observations at lower severity levels, suggesting less frequent high-severity bleaching. Contrastly, the Middle East has a similar shape, but reversed—emphasizing higher severity levels. 
+3. Asia & Pacific: These regions appear to have more uniform severity levels; however, the Pacific differs in that it demonstrates a significant increase in density at severity level 5, the highest of any region. 
+
+This visualization highlights the variation in bleaching severity across regions, and suggests that regions like Australia, the Americas, and the Pacific experience a broader spectrum of bleaching severity. This variability potentially reflects the presence of larger and more closely monitored reef systems. In contrast, regions like Africa and the Middle East may require additional monitoring to better understand coral health dynamics.
 
 ## Temporal Trends
 
@@ -90,7 +98,9 @@ ggplot(df_yearly, aes(x = YEAR, y = num_bleaching_events)) +
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 ```
+The line plot illustrates how the number of observations changes over time from the 1970s to the early 2010s. The number of observations remained consistently low from the 1970s through the 1980s, with a notable spike occurring just before the year 2000. This spike may reflect a combination of intensified monitoring efforts, global warming impacts, or a particularly severe bleaching event. After this peak, the number of recorded events fluctuates, but remains higher than pre-2000 levels.
 
+It is important to note that the consistently low observation counts before the 1990s may indicate limited monitoring rather than an absence of bleaching events. Overall, this graph aligns with known increases in global coral stress due to rising sea surface temperatures. 
 
 ```{r}
 #Missing Years with Interpolated Data
@@ -123,7 +133,9 @@ ggplot(df_yearly_filled, aes(x = YEAR, y = avg_bleaching_severity)) +
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 ```
+This line chart demonstrates the overall trend of average coral bleaching severity over time. Due to more limited data points in earlier decades, we interpolated a few missing years (primarily between 1970-1980) in order to achieve a continuous perspective. The severity ranges from 0 to 3, with higher values indicating more severe bleaching. 
 
+There is a notable rise in average bleaching severity beginning in the 1990s, aligning with trends in warming temperatures and increased coral stress. What is most alarming is the steep, upward trajectory post-2000, with the highest average severity occurring in the early 2010s. This indicates a concerning trend of increasingly severe bleaching events in more recent years. 
 
 ```{r}
 # Aggregate the data to count the number of observations per year and region
@@ -147,7 +159,7 @@ ggplot(df_summary, aes(x = YEAR, y = num_observations, color = REGION, group = R
     legend.key.size = unit(0.7, "cm")
   )
 ```
-
+In this line chart, we observe the total number of observations over time grouped by region. The data highlights a sharp spike in observations in Australia around the year 2000, supporting our previous observations and insights. The Americas also display notable peaks, though less pronounced than Australia, followed by Asia. This visualization emphasizes the geographic and temporal disparities in monitoring efforts, with significant gaps in data for some regions, such as Africa and the Middle East. 
 
 ```{r}
 # Convert BLEACHING_SEVERITY to numeric if necessary
@@ -177,9 +189,9 @@ ggplot(df_monthly, aes(x = factor(MONTH, levels = 1:12), y = avg_bleaching_sever
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 ```
+This bar chart explores seasonal patterns in coral bleaching events by illustrating the average bleaching severity for each month. Bleaching severity is slightly higher during the early months of the year, particularly February-April, compared to other months. July also exhibits a notable severity level comparable to that of March. Severity levels rise again in November, indicating a possible seasonal rebound.
 
-
-
+This visualization suggests a seasonal component to coral bleaching, potentially driven by variations in ocean temperatures and environmental stressors. We would expect higher levels of bleaching to occur in the summer months; however, many regions exhibit typical “summer”/warmer water temperatures at different months of the year. This could explain why February experienced a high spike, as many regions (i.e. regions near the Caribbean and the Great Barrier Reef) experience warm oceanic temperatures in the winter months.
 
 
 ## Geospatial Trends
@@ -213,7 +225,9 @@ ggplot(df_filtered, aes(x = LON, y = LAT, color = BLEACHING_SEVERITY)) +
     legend.position = "right"
   )
 ```
+This scatterplot visualizes coral bleaching severity by geographic coordinates, with point colors indicating bleaching severity levels of each recorded observation. Dense clusters of observations are evident in specific regions, likely corresponding to areas with extensive coral reef systems and high monitoring efforts.
 
+We observe that the majority of high bleaching severity cases lie in the eastern hemisphere. Lighter and medium shaded points dominate the plot, suggesting that most observations are of lower to moderate severity. Furthermore, as shown by the lightest shade, there are areas where no bleaching was observed. This indicates that some regions remain unaffected despite nearby bleaching events. This further highlights that various spectrums of bleaching can coexist within the same location, or even on the same coral, in each region.
 
 ```{r, fig.width=10, fig.height=4}
 # Get the top 3 countries based on number of observations
@@ -252,6 +266,12 @@ ggplot(top_3_countries_df, aes(x = LON, y = LAT, fill = factor(BLEACHING_SEVERIT
   )
 
 ```
+This hexbin plot portrays the spatial distribution of coral bleaching severity for the three countries with the highest number of observations: Malaysia, Mexico, and the Torres Strait & Great Barrier Reef region in Australia. Each hexagon represents the density level of observations within the region, with colors indicating bleaching severity levels from “No Bleaching” to “HIGH”.
+
+Malaysia has fewer total observations, distributed across all cardinal directions within the country. Most events show “No Bleaching”/“Low" to “Medium” levels of bleaching. 
+Mexico has a moderate density of observations, primarily clustered along specific latitudes and longitudes. The reported values primarily consist of “Medium” in addition to “HIGH” severity events.
+
+Australia (Torres Strait & Great Barrier Reef) demonstrates the highest concentration of observations. While the range of bleaching severity levels are diverse, it is dominated by “HIGH” severity events.
 
 ```{r, fig.width=12, fig.height=8}
 top_country <- df |>
@@ -299,6 +319,15 @@ ggplot() +
   ylim(-25, -8)
 
 ```
+This heatmap exhibits the spatial distribution of coral bleaching severity across the Torres Strait and Great Barrier Reef. The intensity of the colors indicates the presence of many high bleaching severity events. 
+
+Northern and central areas show a mix of “No Bleaching” and “Low” severity, suggesting less frequent or less severe bleaching events in these regions. Areas of “HIGH” bleaching severity are primarily located in the southern parts of the reef, highlighting regions under greater stress.
+
+The visualization supports the urgent need for targeted interventions in areas with high bleaching severity and continued monitoring across the reef system to track ongoing changes. This map provides a clear spatial overview of bleaching impacts and highlights priority areas for conservation efforts.
 
 
 
+
+## Summary
+
+Our analysis reveals several key insights about coral bleaching trends and their global impact. First, regions like Australia and the Americas dominate the number of observations, reflecting strong monitoring capacity, while Africa and the Middle East demonstrate significantly smaller numbers of observations, likely due to limited resources. Spatial distribution maps highlight the Great Barrier Reef as a hotspot for high-severity bleaching events, emphasizing the urgent need for conservation in the region. Temporal trends show a concerning increase in bleaching severity since the 1990s, closely tied to global warming and rising ocean temperatures. Seasonal patterns suggest a connection between bleaching events and warmer months, but variations across regions reflect differences in local climates.
