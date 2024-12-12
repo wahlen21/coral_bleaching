@@ -1,13 +1,11 @@
 # Results
 ```{r}
 #install.packages('naniar');
-#install.packages("viridis");
 library(ggplot2);
 library(tidyverse);
 library(readxl);
 library(naniar);
 library(dplyr);
-library(viridis);
 library(forcats);
 ```
 
@@ -24,13 +22,17 @@ ggplot(data = df, aes(x = fct_infreq(REGION))) +
   geom_bar(fill = "lightblue", color = 'black') +
   labs(y = "Number of Observations", x = "Region", title = "Number of Observations by Region") +
   theme_minimal() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    axis.text = element_text(size = 6)
+  )
 ```
+
 ```{r, fig.width=6, fig.height=8}
-country_counts <- df %>%
-  filter(BLEACHING_SEVERITY != "Severity Unknown") %>%
-  group_by(COUNTRY) %>%
-  summarize(num_observations = n()) %>%
+country_counts <- df |>
+  filter(BLEACHING_SEVERITY != "Severity Unknown") |>
+  group_by(COUNTRY) |>
+  summarize(num_observations = n()) |>
   arrange(desc(num_observations))
 
 # Cleveland dot plot
@@ -50,22 +52,184 @@ ggplot(country_counts, aes(x = num_observations, y = reorder(COUNTRY, num_observ
 ```
 
 
+```{r}
+df$BLEACHING_SEVERITY <- factor(df$BLEACHING_SEVERITY)
+
+# Violin plot
+ggplot(df, aes(x = REGION, y = as.numeric(BLEACHING_SEVERITY), fill = REGION)) + 
+  geom_violin(trim = TRUE, color = "black") +
+  labs(x = "Region", y= "Bleaching Severity", title = "Violin Plot of Bleaching Severity by Region") + 
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    axis.text = element_text(size = 6)
+  )
+```
+
+
+## Temporal Trends
+
+```{r}
+# Aggregate the data to count the number of bleaching events per year
+df_yearly <- df |>
+  group_by(YEAR) |>
+  summarize(num_bleaching_events = n(), .groups = "drop")
+
+ggplot(df_yearly, aes(x = YEAR, y = num_bleaching_events)) +
+  geom_line(color = "steelblue", size = 1) +
+  geom_point(color = "black", size = 1, alpha = 0.2) +
+  labs(
+    x = "Year",
+    y = "Number of Observations",
+    title = "Yearly Trend of Coral Bleaching Events"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+```
+
+
+```{r}
+#Missing Years with Interpolated Data
+severity_mapping <- c("No Bleaching" = 0, "Low" = 1, "Medium" = 2, "HIGH" = 3, "Severity Unknown" = NA)
+df$BLEACHING_SEVERITY_NUM <- severity_mapping[df$BLEACHING_SEVERITY]
+
+# Aggregate data to calculate the average bleaching severity per year
+df_yearly <- df |>
+  group_by(YEAR) |>
+  summarize(avg_bleaching_severity = mean(BLEACHING_SEVERITY_NUM, na.rm = TRUE), .groups = "drop")
+
+
+# Add missing years and interpolate BLEACHING_SEVERITY
+df_yearly_filled <- df_yearly |>
+  complete(YEAR = seq(min(YEAR), max(YEAR), by = 1)) |>  # Add missing years
+  mutate(avg_bleaching_severity = zoo::na.approx(avg_bleaching_severity, na.rm = FALSE))  # Interpolate missing values
+
+# Create the line chart
+ggplot(df_yearly_filled, aes(x = YEAR, y = avg_bleaching_severity)) +
+  geom_line(size = 1, color = "steelblue") +
+  geom_point(size = 1, color = "black", alpha = 0.2) +
+  labs(
+    x = "Year",
+    y = "Average Bleaching Severity",
+    title = "Trend of Average Bleaching Severity Over Time"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+```
+
+
+```{r}
+# Aggregate the data to count the number of observations per year and region
+df_summary <- df |>
+  group_by(YEAR, REGION) |>
+  summarize(num_observations = n(), .groups = "drop")
+
+ggplot(df_summary, aes(x = YEAR, y = num_observations, color = REGION, group = REGION)) +
+  geom_line(size = 1, alpha = 0.7) +
+  geom_point(size = 1, alpha = 0.5) +  
+  labs(
+    x = "Year",
+    y = "Number of Observations",
+    color = "Region",
+    title = "Number of Observations Over Time by Region"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    legend.key.size = unit(0.7, "cm")
+  )
+```
+
+
+```{r}
+# Convert BLEACHING_SEVERITY to numeric if necessary
+severity_mapping <- c("No Bleaching" = 0, "Low" = 1, "Medium" = 2, "HIGH" = 3, "Severity Unknown" = NA)
+df$BLEACHING_SEVERITY_NUM <- severity_mapping[df$BLEACHING_SEVERITY]
+
+# Aggregate data to calculate the average bleaching severity per month
+df_monthly <- df |>
+  group_by(MONTH) |>
+  summarize(avg_bleaching_severity = mean(BLEACHING_SEVERITY_NUM, na.rm = TRUE), .groups = "drop")
+
+ggplot(df_monthly, aes(x = factor(MONTH, levels = 1:12), y = avg_bleaching_severity)) +
+  geom_bar(stat = "identity", fill = "lightblue", color="black", alpha = 0.8) +
+  labs(
+    x = "Month",
+    y = "Average Bleaching Severity",
+    title = "Average Bleaching Severity by Month"
+  ) +
+  scale_x_discrete(labels = c(
+    "1" = "Jan", "2" = "Feb", "3" = "Mar", "4" = "Apr",
+    "5" = "May", "6" = "Jun", "7" = "Jul", "8" = "Aug",
+    "9" = "Sep", "10" = "Oct", "11" = "Nov", "12" = "Dec"
+  )) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+```
+
+
+
+
+
 ## Geospatial Trends
+
+```{r}
+# Removing an outlier by filtering LAT and LON within a reasonable range
+# Replace the range with appropriate limits after inspecting the data
+df_filtered <- df |>
+  filter(LAT > -90 & LAT < 90, LON > -180 & LON < 180)  # Latitude and longitude should be within these bounds
+
+# Ensure BLEACHING_SEVERITY is a factor
+df_filtered$BLEACHING_SEVERITY <- factor(df_filtered$BLEACHING_SEVERITY)
+
+# Create the scatterplot without the outlier
+ggplot(df_filtered, aes(x = LON, y = LAT, color = BLEACHING_SEVERITY)) +
+  geom_point(size = 2, alpha = 0.7) +
+  scale_color_manual(values = c("No Bleaching" = "#FFCC99", 
+                                "Low" = "#FF9966", 
+                                "Medium" = "#FF6633", 
+                                "HIGH" = "#CC3300", 
+                                "Severity Unknown" = "gray")) + 
+  labs(
+    x = "Longitude",
+    y = "Latitude",
+    color = "Bleaching Severity",
+    title = "Scatterplot of Coral Bleaching Severity by Location Coordinates"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right"
+  )
+```
+
+
 ```{r, fig.width=10, fig.height=4}
-# Get the top 5 countries based on number of observations
-top_5_countries <- df %>%
-  filter(BLEACHING_SEVERITY != "Severity Unknown") %>%
-  group_by(COUNTRY) %>%
-  summarize(num_observations = n()) %>%
-  arrange(desc(num_observations)) %>%
+# Get the top 3 countries based on number of observations
+top_3_countries <- df |>
+  filter(BLEACHING_SEVERITY != "Severity Unknown") |>
+  group_by(COUNTRY) |>
+  summarize(num_observations = n()) |>
+  arrange(desc(num_observations)) |>
   slice_head(n = 3)
 
-# Filter data for the top 5 countries
-top_5_countries_df <- df %>%
-  filter(COUNTRY %in% top_5_countries$COUNTRY & BLEACHING_SEVERITY != "Severity Unknown")
+# Filter data for the top 3 countries
+top_3_countries_df <- df |>
+  filter(COUNTRY %in% top_3_countries$COUNTRY & BLEACHING_SEVERITY != "Severity Unknown")
 
 # Hexbin plot
-ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = factor(BLEACHING_SEVERITY, levels = c("No Bleaching", "Low", "Medium", "HIGH")))) + 
+ggplot(top_3_countries_df, aes(x = LON, y = LAT, fill = factor(BLEACHING_SEVERITY, levels = c("No Bleaching", "Low", "Medium", "HIGH")))) + 
   geom_hex(alpha = 0.8, color = 'black', size = .3) + 
   facet_wrap(~COUNTRY, scales = "free") + 
   labs(
@@ -83,23 +247,24 @@ ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = factor(BLEACHING_SEVERIT
   )) +
   theme(
     strip.text = element_text(size = 10), 
-    axis.text = element_text(size = 8)
+    axis.text = element_text(size = 8),
+    plot.title = element_text(hjust = 0.5)
   )
 
 ```
 
 ```{r, fig.width=12, fig.height=8}
-top_5_countries <- df %>%
-  filter(BLEACHING_SEVERITY != "Severity Unknown") %>% 
-  filter(LON > 142) %>%
-  group_by(COUNTRY) %>%
-  summarize(num_observations = n()) %>%
-  arrange(desc(num_observations)) %>%
+top_country <- df |>
+  filter(BLEACHING_SEVERITY != "Severity Unknown") |> 
+  filter(LON > 142) |>
+  group_by(COUNTRY) |>
+  summarize(num_observations = n()) |>
+  arrange(desc(num_observations)) |>
   slice_head(n = 1)
 
 # Filter data for the top 5 countries
-top_5_countries_df <- df %>%
-  filter(COUNTRY %in% top_5_countries$COUNTRY & BLEACHING_SEVERITY != "Severity Unknown") %>%
+top_country_df <- df |>
+  filter(COUNTRY %in% top_country$COUNTRY & BLEACHING_SEVERITY != "Severity Unknown") |>
   mutate(
     LAT = round(LAT, 1),  # Round LAT to the nearest tenth
     LON = round(LON, 1),  # Round LON to the nearest tenth
@@ -108,10 +273,9 @@ top_5_countries_df <- df %>%
 world_map <- map_data("world")
 # Heatmap plot
 ggplot() +
-  # Add the world map (background)
   geom_map(data = world_map, map = world_map, aes(x = long, y = lat, map_id = region), 
            color = "black", fill = "lightgray", size = 0.2) +
-  geom_tile(data = top_5_countries_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + 
+  geom_tile(data = top_country_df, aes(x = LON, y = LAT, fill = BLEACHING_SEVERITY)) + 
   facet_wrap(~COUNTRY, scales = "free") + 
   labs(
     title = "Heatmap Plot of Bleaching Severity",
@@ -128,18 +292,13 @@ ggplot() +
 )) +
   theme(
     strip.text = element_text(size = 10), 
-    axis.text = element_text(size = 8)
+    axis.text = element_text(size = 8),    
+    plot.title = element_text(hjust = 0.5)
   ) +
   xlim(142, 153) +
   ylim(-25, -8)
 
 ```
-
-
-
-## Temporal Trends
-
-
 
 
 

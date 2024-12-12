@@ -2,7 +2,6 @@
 
 ## Global Coral Bleaching Severity Map
 ```{r setup, include=FALSE}
-# Load necessary libraries
 library(tidyverse)
 library(readxl)
 library(jsonlite)
@@ -11,7 +10,7 @@ library(jsonlite)
 coral_data <- read_excel("CoralBleaching.xlsx")
 
 # Subset the data for the specified COUNTRY
-subset_data <- coral_data %>%
+subset_data <- coral_data |>
   select(LAT, LON, BLEACHING_SEVERITY, LOCATION, MONTH, YEAR, DEPTH, CORAL_FAMILY, CORAL_SPECIES, PERCENTAGE_AFFECTED, BLEACHING_DURATION, MORTALITY, RECOVERY, SURVEY_TYPE, SURVEY_AREA, WATER_TEMPERATURE, OTHER_FACTORS, REMARKS, SOURCE)
 
 # Convert the data into a JSON object for passing to JS
@@ -35,7 +34,6 @@ json_data <- toJSON(subset_data, pretty = TRUE)
 // Pass the JSON data from R to the D3 script in myscript.js
 let coralData = `r {{ json_data }}`;
 </script>
-
 ```
 
 <p></p>
