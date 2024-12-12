@@ -4,8 +4,8 @@
 #install.packages("viridis");
 library(ggplot2);
 library(tidyverse);
-library("readxl");
-library('naniar');
+library(readxl);
+library(naniar);
 library(dplyr);
 library(viridis);
 library(forcats);
@@ -13,7 +13,7 @@ library(forcats);
 
 ## Load dataset
 ```{r}
-df <- read_excel("data/CoralBleaching.xlsx")
+df <- read_excel("CoralBleaching.xlsx")
 df <- df |> drop_na(REGION)
 ```
 
@@ -76,15 +76,16 @@ ggplot(top_5_countries_df, aes(x = LON, y = LAT, fill = factor(BLEACHING_SEVERIT
   ) +
   theme_minimal() +
   scale_fill_manual(values = c(
-    "No Bleaching" = "coral1",
-    "Low" = "coral2",
-    "Medium" = "coral3",
-    "HIGH" = "coral4"
+    "No Bleaching" = "#FFCC99",
+    "Low" = "#FF9966",
+    "Medium" = "#FF6633",
+    "HIGH" = "#CC3300"
   )) +
   theme(
     strip.text = element_text(size = 10), 
     axis.text = element_text(size = 8)
   )
+
 ```
 
 ```{r, fig.width=12, fig.height=8}
@@ -120,10 +121,10 @@ ggplot() +
   ) +
   theme_minimal() +
   scale_fill_manual(values = c(
-  "No Bleaching" = "coral1",
-  "Low" = "coral2",
-  "Medium" = "coral3",
-  "HIGH" = "coral4"
+  "No Bleaching" = "#FFCC99",
+  "Low" = "#FF9966",
+  "Medium" = "#FF6633",
+  "HIGH" = "#CC3300"
 )) +
   theme(
     strip.text = element_text(size = 10), 
@@ -131,6 +132,7 @@ ggplot() +
   ) +
   xlim(142, 153) +
   ylim(-25, -8)
+
 ```
 
 
